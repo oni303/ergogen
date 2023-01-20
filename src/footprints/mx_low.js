@@ -59,9 +59,10 @@ module.exports = {
       `
     function pins(def_neg, def_pos, def_side) {
 	return `
-	${''/* pins */}
-	(pad 1 thru_hole circle (at ${def_pos}0 6.05 180) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.from.str})
-	(pad 2 thru_hole circle (at ${def_neg}4.13 3.3 41.9) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.to.str})
+          ${''/* pins */}
+          (pad 1 thru_hole circle (at ${def_pos}0 6.05 180) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.from.str})
+          (pad 2 thru_hole circle (at ${def_neg}4.13 3.3 41.9) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.to.str})
+        `
     }
     if(p.param.reverse){
       return `
