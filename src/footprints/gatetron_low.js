@@ -22,7 +22,7 @@ module.exports = {
   },
   body: p => {
     const standard = `
-      (module Cherry-MX-Low-Profile (layer F.Cu) (tedit 5B8593EA)
+      (module Gatetron-Low-Profile (layer F.Cu) (tedit 5B8593EA)
       ${p.at /* parametric position */}
 
       ${'' /* footprint reference */}
