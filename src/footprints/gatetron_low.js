@@ -62,13 +62,13 @@ module.exports = {
 	return `
           ${''/* pins */}
           (pad 1 thru_hole circle (at ${def_pos}2.6 5.75 180) (size 2.5 2.5) (drill 1.53) (layers *.Cu *.Mask) ${p.net.from.str})
-          (pad 2 thru_hole circle (at ${def_neg}4.4 4.7 41.9) (size 2.5 2.5) (drill 1.53) (layers *.Cu *.Mask) ${p.net.to.str})
+          (pad 2 thru_hole circle (at ${def_neg}4.4 4.7 180 (size 2.5 2.5) (drill 1.53) (layers *.Cu *.Mask) ${p.net.to.str})
         `
       } else {
 	return `
           ${''/* pins */}
           (pad 1 thru_hole circle (at ${def_pos}2.6 5.75 180) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.from.str})
-          (pad 2 thru_hole circle (at ${def_neg}4.4 4.7 41.9) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.to.str})
+          (pad 2 thru_hole circle (at ${def_neg}4.4 4.7 180) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.to.str})
         `
       }
     }
