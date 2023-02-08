@@ -9,6 +9,7 @@ module.exports = {
     jumper: require('./jumper'),
     mx: require('./mx'),
     mx_low: require('./mx_low'),
+    gatetron_low: require('./gatetron_low'),
     oled: require('./oled'),
     omron: require('./omron'),
     pad: require('./pad'),
