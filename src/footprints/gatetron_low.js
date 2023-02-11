@@ -56,18 +56,18 @@ module.exports = {
       (fp_line (start 9.5 9.5) (end -9.5 9.5) (layer Dwgs.User) (width 0.15))
       (fp_line (start -9.5 9.5) (end -9.5 -9.5) (layer Dwgs.User) (width 0.15))
       `
-    function pins(def_rot, def_side) {
+    function pins(def_neg, def_pos,def_y, def_side) {
       if(p.param.hotswap) {
 	return `
           ${''/* pins */}
-          (pad 1 thru_hole circle (at 2.60 5.75 ${def_rot}) (size 2.5 2.5) (drill 1.53) (layers *.Cu *.Mask) ${p.net.from.str})
-          (pad 2 thru_hole circle (at 4.40 4.70 ${def_rot})  (size 2.5 2.5) (drill 1.53) (layers *.Cu *.Mask) ${p.net.to.str})
+          (pad 1 thru_hole circle (at ${def_pos}2.60 ${def_y}5.75 180) (size 2.5 2.5) (drill 1.53) (layers *.Cu *.Mask) ${p.net.from.str})
+          (pad 2 thru_hole circle (at ${def_neg}4.40 ${def_y}4.70 180)  (size 2.5 2.5) (drill 1.53) (layers *.Cu *.Mask) ${p.net.to.str})
         `
       } else {
 	return `
           ${''/* pins */}
-          (pad 1 thru_hole circle (at 2.60 5.75 ${def_rot}) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.from.str})
-          (pad 2 thru_hole circle (at 4.40 4.70 ${def_rot}) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.to.str})
+          (pad 1 thru_hole circle (at ${def_pos}2.60 ${def_y}5.75 180) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.from.str})
+          (pad 2 thru_hole circle (at ${def_neg}4.40 ${def_y}4.70 180) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.to.str})
         `
       }
     }
@@ -75,14 +75,14 @@ module.exports = {
       return `
         ${standard}
         ${p.param.keycaps ? keycap : ''}
-        ${pins('180', 'B')}
-        ${pins('0', 'F')})
+        ${pins('-', '','', 'B')}
+        ${pins('', '-','-', 'F')})
         `
     } else {
       return `
         ${standard}
         ${p.param.keycaps ? keycap : ''}
-        ${pins('180', 'B')})
+        ${pins('-', '','', 'B')})
         `
     }
   }
