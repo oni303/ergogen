@@ -76,7 +76,7 @@ module.exports = {
         ${standard}
         ${p.param.keycaps ? keycap : ''}
         ${pins('-', '', 'B')}
-        ${pins('', '-', 'F')})
+        ${pins('-', '', 'F')})
         `
     } else {
       return `
