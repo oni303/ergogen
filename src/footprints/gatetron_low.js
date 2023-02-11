@@ -60,14 +60,14 @@ module.exports = {
       if(p.param.hotswap) {
 	return `
           ${''/* pins */}
-          (pad 1 thru_hole circle (at ${def_pos}2.6 5.75 180) (size 2.5 2.5) (drill 1.53) (layers *.Cu *.Mask) ${p.net.from.str})
-          (pad 2 thru_hole circle (at ${def_neg}4.4 4.7 180)  (size 2.5 2.5) (drill 1.53) (layers *.Cu *.Mask) ${p.net.to.str})
+          (pad 1 thru_hole circle (at 2.60 5.75 ${def_rot}) (size 2.5 2.5) (drill 1.53) (layers *.Cu *.Mask) ${p.net.from.str})
+          (pad 2 thru_hole circle (at 4.40 4.70 ${def_rot})  (size 2.5 2.5) (drill 1.53) (layers *.Cu *.Mask) ${p.net.to.str})
         `
       } else {
 	return `
           ${''/* pins */}
-          (pad 1 thru_hole circle (at ${def_pos}2.6 5.75 180) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.from.str})
-          (pad 2 thru_hole circle (at ${def_neg}4.4 4.7 180) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.to.str})
+          (pad 1 thru_hole circle (at 2.60 5.75 ${def_rot}) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.from.str})
+          (pad 2 thru_hole circle (at 4.40 4.70 ${def_rot}) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.to.str})
         `
       }
     }
@@ -75,14 +75,14 @@ module.exports = {
       return `
         ${standard}
         ${p.param.keycaps ? keycap : ''}
-        ${pins('-', '', 'B')}
-        ${pins('-', '', 'F')})
+        ${pins('180', 'B')}
+        ${pins('0', 'F')})
         `
     } else {
       return `
         ${standard}
         ${p.param.keycaps ? keycap : ''}
-        ${pins('-', '', 'B')})
+        ${pins('180', 'B')})
         `
     }
   }
