@@ -44,11 +44,10 @@ module.exports = {
       (fp_line (start 7.5 -7.5) (end 7.5 7.5) (layer Eco2.User) (width 0.1524))
     
       ${''/* middle shaft */}
-      (pad "" np_thru_hole circle (at 0 0 180) (size 5.00 5.00) (drill 5.00) (layers *.Cu *.Mask))
+      (pad "" np_thru_hole circle (at 0 0 180) (size 5.01 5.01) (drill 5.01) (layers *.Cu *.Mask))
 
       ${''/* stabilizers */}
-      (pad "" np_thru_hole circle (at 0 0 180) (size 6.25 6.25) (drill 6.25) (layers *.Cu *.Mask))
-      (pad "" np_thru_hole circle (at 0 3.7 180) (size 2.3 2.3) (drill 2.3) (layers *.Cu *.Mask))
+      (pad "" np_thru_hole circle (at 0 0 180) (size 5.01 5.01) (drill 5.01) (layers *.Cu *.Mask))
       `
     const keycap = `
       ${'' /* keycap marks */}
