@@ -56,7 +56,7 @@ module.exports = {
       (fp_line (start 9.5 9.5) (end -9.5 9.5) (layer Dwgs.User) (width 0.15))
       (fp_line (start -9.5 9.5) (end -9.5 -9.5) (layer Dwgs.User) (width 0.15))
       `
-    function pins(def_neg, def_pos, def_side) {
+    function pins(def_rot, def_side) {
       if(p.param.hotswap) {
 	return `
           ${''/* pins */}
